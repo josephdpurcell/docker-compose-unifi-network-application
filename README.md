@@ -2,6 +2,8 @@
 
 This is a how-to for using https://hub.docker.com/r/linuxserver/unifi-network-application
 
+Hopefully some day this repo gets deleted and put into https://github.com/linuxserver/docker-unifi-network-application#usage as a recipe?
+
 # Background
 
 Why. Why do I need all this state to control my network. I just want to go to the AP's IP and control it just like I do for the edge router. I have such a simple setup. But, alas, I am not a networking expert. There are probably good reasons.
