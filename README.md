@@ -2,21 +2,25 @@
 
 This is a how-to for using https://hub.docker.com/r/linuxserver/unifi-network-application
 
-Hopefully some day this repo gets deleted and put into https://github.com/linuxserver/docker-unifi-network-application#usage as a recipe?
-
 # Background
 
-Why. Why do I need all this state to control my network. I just want to go to the AP's IP and control it just like I do for the edge router. I have such a simple setup. But, alas, I am not a networking expert. There are probably good reasons.
+Let's start with the fact of the Unifi controller software. Why. Why do I need all this state to control my network. I just want to go to the AP's IP and control it just like I do for the edge router. I have such a simple setup. But, alas, I am not a networking expert. There are probably good reasons.
+
+Then, how to run it? Fortunately I have experience getting applications to run, so thats not a problem just a bit of a hassle since it's not like you can just have a simple binary to run.
 
 I tried https://hub.docker.com/r/jacobalberty/unifi but it requires forcing APs into override notify and that felt not awesome. I wasn't even seeing the AP show up. I tried linuxserver's and I saw the AP but it got stuck in "Adopting" and then realized you have to do the same thing -- force override the notification thing.
 
-I couldn't find a stock docker-compose that looked like it would fit these goals:
+Based on what I see it seems like a great approach is to use https://github.com/linuxserver/docker-unifi-network-application with docker compose. I personally like that, at least. Thank you `linuxserver`!
+
+In the `linuxserver` docs I couldn't find a complete docker-compose example that included mongo, so I'm making this repo.
+
+Goals:
 
 * Use docker-compose
 * Any state is mounted as a volume (so the host machine can backup data)
 * Assume all required containers are in the docker compose (the linuxserver one assumes mongo is external)
 
-Mostly this repo is to help me remember how to do this again.
+But, honestly this repo is really just help me remember how to do this again.
 
 # DISCLAIMER
 
@@ -128,4 +132,8 @@ You must be in the root directory, the one with the `docker-compose.yml` file.
 NOTE: do NOT run up, just do start.
 
 NOTE: if `docker compose` command doesn't work try `docker-compose` instead, not sure why there are two variants.
+
+# Contributing
+
+Nah. Well, maybe? Hopefully some day this repo gets deleted and put into https://github.com/linuxserver/docker-unifi-network-application#usage as a recipe?
 
