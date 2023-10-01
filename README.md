@@ -4,7 +4,7 @@ This is a how-to for using https://hub.docker.com/r/linuxserver/unifi-network-ap
 
 # Background
 
-Let's start with the fact of the Unifi controller software. Why. Why do I need all this state to control my network. I just want to go to the AP's IP and control it just like I do for the edge router. I have such a simple setup. But, alas, I am not a networking expert. There are probably good reasons.
+Let's start with the fact of the Unifi controller software. Why. Why do I need all this state to control my network. I just want to go to the AP's IP and control it just like I do for the edge router. I have such a simple setup. But, alas, I am not a networking expert, and I know network orchestration is a big deal. There are probably good reasons.
 
 Then, how to run it? Fortunately I have experience getting applications to run, so thats not a problem just a bit of a hassle since it's not like you can just have a simple binary to run.
 
