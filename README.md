@@ -26,11 +26,19 @@ But, honestly this repo is really just help me remember how to do this again.
 
 You are at your own risk! I ran through this and it worked for me, but some steps don't make sense. For example, I'm not seeing db/config dir get populated. And, what does recovery look like if I lose all the data for the unifi controller? I think my plan is just to reset, because now that I know the setup it would probably take me 10 mins to set it up again as opposed to the 200 mins it's taken me to figure out how to just configure it in the first place.
 
-# Assumptions about the network
+# Assumptions
+
+## About your network
 
 I tested these instructions with Ubuntu 18 or so and Unifi 6 Professional. The Ubuntu machine runs the Unifi Controller in a docker container that I'll spin up when I need to, and is plugged in hard-wired to a Ubiquity Edge Router on port 3. Edge router port 2 has the 48 v POE injector (because Unifi no longer comes with them! that got me). Edge router port 1 is configured to receive DHCP from my ISP's router on a `192.168.1.*`, so Edge Router is handing out DHCP on ports 2, 3, and 4 on `192.168.2.*`. Very basic setup.
 
 These instructions assumes 192.168.2.39 is the Unifi AP and 192.168.2.38 is the machine running the docker container Unifi controller. Your IPs will most likely differ.
+
+## About security
+
+I'm OK using defaults for the controller and mongo stuff. I am hoping I boot the container once, configure the AP, and then never have to boot the software again because either (a) my Unifi AP outlives me, or (b) Ubiquity offers something easier and I can deprecate this repo.
+
+You COULD still use this composer example just make sure you don't use default passwords and apply all the magic sauces that keep things secure.
 
 # Getting started
 
