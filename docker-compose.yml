@@ -16,7 +16,7 @@ services:
       - MEM_LIMIT=1024 #optional
       - MEM_STARTUP=1024 #optional
     volumes:
-      - /home/joep/bin/unifi-controller/app/config:/config
+      - ./vol/app/config:/config
     networks:
       - unifi-network
     ports:
@@ -24,7 +24,7 @@ services:
       - 3478:3478/udp
       - 10001:10001/udp
       - 8080:8080
-      - 1900:1900/udp #optional
+     # - 1900:1900/udp #optional
       - 8843:8843 #optional
       - 8880:8880 #optional
       - 6789:6789 #optional
@@ -38,9 +38,9 @@ services:
     ports:
       - 27017:27017
     volumes:
-      - /home/joep/bin/unifi-controller/db/data:/data/db
-      - /home/joep/bin/unifi-controller/db/config:/data/configdb
-      - /home/joep/bin/unifi-controller/db/init-mongo.js:/docker-entrypoint-initdb.d/init-mongo.js:ro
+      - ./vol/bin/unifi-controller/db/data:/data/db
+      - ./vol/bin/unifi-controller/db/config:/data/configdb
+      - ./vol/init:/docker-entrypoint-initdb.d:ro
     restart: unless-stopped
 networks:
   unifi-network:
