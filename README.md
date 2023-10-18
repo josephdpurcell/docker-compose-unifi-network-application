@@ -50,9 +50,10 @@ You COULD just clone this repo, but lets pretend you didn't and you just want to
 mkdir -p app/config
 mkdir -p db/data
 mkdir -p db/config
+mkdir -p init
 ```
 
-Copy the `docker-compose.yml` from this repo into `./` and copy `db/init-mongo.js` from the repo into `db/init-mongo.js`.
+Copy the `docker-compose.yml` from this repo into `./` and copy `init/init-mongo.js` from the repo into `init/init-mongo.js`.
 
 Your cwd should have folders/files like:
 
@@ -61,7 +62,8 @@ app/
 └── config/
 db/
 ├── config/
-├── data/
+└── data/
+init/
 └── init-mongo.js
 docker-compose.yml
 ```
@@ -73,7 +75,7 @@ You need to understand docker to make sense of all this, but short version if yo
 NOTE: I run this in the foreground so I can see things happening, if you want it in background add `-d`
 
 ```
-docker compose up
+docker compose up 
 ```
 
 Eventually output should hit a pause with a line like:
