@@ -1,3 +1,5 @@
 app/config/*
 db/config/*
 db/data/*
+vol/app/config
+vol/bin/unifi-controller
